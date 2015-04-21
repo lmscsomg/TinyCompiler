@@ -1,0 +1,24 @@
+read : x
+If
+      op:<
+            const:0
+            id: x
+then
+      assign to:fact
+            const:1
+      repeat
+            assign to:fact
+                   op:*
+                        id: fact
+                        id: x
+            assign to:x
+                   op:-
+                        id: x
+                        const:1
+      until
+            op:=
+                  id: x
+                  const:0
+      write 
+            id: fact
+end
